@@ -1,10 +1,10 @@
 name: "Build and Test - Windows"
 
 on:
-  # Excelerate Notes: pushing a tag named build-* starts an unsigned release build
+  # Excelerate Notes: pushing to the windows-build branch starts an unsigned release build
   push:
-    tags:
-      - 'build-*'
+    branches:
+      - windows-build
   workflow_dispatch:
     inputs:
       build-type:
