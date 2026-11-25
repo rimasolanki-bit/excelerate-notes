@@ -1,3 +1,18 @@
+// Excelerate brand accent scale (replaces Tailwind blue, indigo, sky, purple, violet)
+const brandAccent = {
+	50: '#FBF4E6',
+	100: '#FBF4E6',
+	200: '#C9A87E',
+	300: '#C9A87E',
+	400: '#6B0F1A',
+	500: '#6B0F1A',
+	600: '#6B0F1A',
+	700: '#3B1417',
+	800: '#3B1417',
+	900: '#3B1417',
+	950: '#3B1417'
+};
+
 /** @type {import('tailwindcss').Config} */
 module.exports = {
     darkMode: ['class'],
@@ -9,11 +24,33 @@ module.exports = {
   theme: {
   	extend: {
   		fontFamily: {
+  			// Excelerate brand: Georgia (Brand Master v1.5, section 5.2)
   			sans: [
-  				'var(--font-source-sans-3)'
+  				'Georgia',
+  				'"Times New Roman"',
+  				'serif'
   			]
   		},
   		colors: {
+  			// Excelerate brand: the app's original blue/indigo/purple accents are
+  			// mapped onto the six brand colours (Brand Master v1.5, section 5.1).
+  			// Light shades become Cream, borders Soft Gold, solid accents the maroons.
+  			blue: brandAccent,
+  			indigo: brandAccent,
+  			sky: brandAccent,
+  			purple: brandAccent,
+  			violet: brandAccent,
+  			// Red (record button, errors) becomes the maroons, as Brand Master 5.5 rule 6 requires.
+  			red: brandAccent,
+  			rose: brandAccent,
+  			brand: {
+  				'deep-maroon': '#3B1417',
+  				'rich-maroon': '#6B0F1A',
+  				'accent-gold': '#C9A84C',
+  				'soft-gold': '#C9A87E',
+  				cream: '#FBF4E6',
+  				charcoal: '#1F1F1F'
+  			},
   			background: 'hsl(var(--background))',
   			foreground: 'hsl(var(--foreground))',
   			border: 'hsl(var(--border))',

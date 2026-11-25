@@ -6,6 +6,8 @@ import { MessagesSquare } from 'lucide-react';
 import { Tooltip, TooltipContent, TooltipTrigger } from './ui/tooltip';
 
 export default function FeedbackLink({ isCollapsed }: { isCollapsed: boolean }) {
+  // Excelerate Notes: the upstream feedback page points to the Meetily project, so it is hidden.
+  const hidden = true;
   const pathname = usePathname();
   const isActive = pathname === '/feedback';
   const link = (
@@ -29,6 +31,7 @@ export default function FeedbackLink({ isCollapsed }: { isCollapsed: boolean }) 
     </Link>
   );
 
+  if (hidden) return null;
   if (!isCollapsed) return link;
 
   return (
