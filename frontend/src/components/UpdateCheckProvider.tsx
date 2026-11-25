@@ -23,7 +23,7 @@ export function UpdateCheckProvider({ children }: { children: React.ReactNode })
   }, []);
 
   const { updateInfo, isChecking, checkForUpdates } = useUpdateCheck({
-    checkOnMount: true,
+    checkOnMount: false, // Excelerate Notes: no automatic update checks,
     showNotification: true,
     onUpdateAvailable: (info) => {
       // Show notification, dialog will be shown when user clicks notification
